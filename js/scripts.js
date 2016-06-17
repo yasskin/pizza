@@ -42,16 +42,17 @@ Pizza.prototype.toppingsCost = function () {
   }
 }
 
-// function resetFields() {
-//   $("#show-size").hide();
-//   $("#show-cost").hide();
-// }
+function resetFields() {
+  $("#show-order").hide();
+  $("input:radio").attr("checked", false);
+  $("input:checkbox").attr("checked", false);
+}
 
 // user interface (or front-end) logic:
 $(document).ready(function() {
   //start a new order
-  $("form#start-button").click(function(event) {
-    event.preventDefault();
+  $("#start-button").click(function() {
+    // event.preventDefault();
     resetFields();
   });
 

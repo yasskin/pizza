@@ -1,3 +1,16 @@
 #show-order, #contact-delivery {
   display: none;
 }
+
+button {
+  margin: 35px;
+}
+
+.jumbotron {
+  background-image: url(../img/vpnplain.jpg);
+  margin-bottom: 30px;
+  background-position: 0% 30%;
+  background-size: cover;
+  color: white;
+  text-shadow: black 0.4em 0.4em 0.4em;
+}

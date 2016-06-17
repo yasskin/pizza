@@ -1,6 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Order Pizza Websute">
+    <meta name="author" content="Noah Yasskin">
+
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <title>Order Pizza: Intro to Programming Object-Oriented JavaScript Object-Oriented Javascript Independent Project</title>
@@ -9,11 +15,37 @@
   </head>
   <body>
     <div class="container">
-      <h1>Vera Pizza Napoletana</h1>
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+            </button>
+            <a class="navbar-brand" href="http://www.pizzanapoletana.org/">Vera Pizza Napoletana</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
+
+      <div class="jumbotron">
+        <h1>Vera Pizza Napoletana</h1>
+        <p>
+          <a id="start-button" class="btn btn-lg btn-primary" type="button">Start New Order &raquo;</a>
+        </p>
+      </div>
+
       <div class="row">
         <form id="pizza-order">
-          <div class="col-md-4 col-md-offset-2">
-          <button id="start-button" type="submit" class="btn btn-success">Start a New Order</button>
+          <div class="col-md-6 col-md-offset-3">
+            <p>Vera Pizza Napoletana is a pizzeria whose goal is to promote and protect the name and the product Pizza Napoletana; a style of pizza and tradition found in Naples. The term Vera, or Verace, means true, genuine, or real.
+            </p>
+            <br>
           <div class="form-group">
             <label for="size">Select your pizza size</label>
             <div class="radio">
@@ -38,29 +70,34 @@
             <div class="checkbox">
               <label>
                 <input type="checkbox" name="toppings" value"plain">
-                Plain cheese
+                All natural Fior di Latte mozzarella
               </label>
               <label>
                 <input type="checkbox" name="toppings" value"pepperoni">
-                Pepperoni
+                All natural Nufala mozzarella
+              </label>
+              <label>
+                <input type="checkbox" name="toppings" value"tomatoes">
+                Sliced San Marzano tomatoes
               </label>
               <label>
                 <input type="checkbox" name="toppings" value"pepperoni">
-                Olives
+                Olympic Provisions Cacciatore (Kah-chuh-TOR-aye): the classic Italian hunter’s salami with caraway, coriander, dried red chili & black pepper.
               </label>
               <label>
                 <input type="checkbox" name="toppings" value"pepperoni">
-                Fresh Basil
+                Olympic Provisions Mortadella: a classic Italian cold cut flecked with California pistachios, black peppercorns and hand-cut fatback, nuanced with the warm flavor of baking spices.
               </label>
               <label>
                 <input type="checkbox" name="toppings" value"pepperoni">
-                Tomatoes
+                Anchovies
               </label>
             </div>
           </div>
-          <button id="make-button" class="btn btn-primary" type="submit" name="button">Make my pizza</button>
+          <button id="make-button" class="btn btn-success" type="submit" name="button">Make my pizza</button>
 
         <div id="show-order">
+          <br>
           <p>You ordered a <span id="show-size"></span> pizza.</p>
           <p><span id="show-price"></span></p>
           <p>The total cost of your order is $<span id="show-cost"></span>.</p>
