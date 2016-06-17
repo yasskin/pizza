@@ -1,13 +1,13 @@
 # _Order Pizza_
 
-#### _A Website for a pizza company, June 17, 2016_
+#### _Vera Pizza Napoletana: A Website for a pizza company, June 17, 2016_
 
 #### By _**Noah Yasskin**_
 
 ## Description
 
-_An Epicodus Student Project_
-[Epicodus] (http://epicodus.com/ "Order Pizza") 
+_A Student Project_
+[Vera Pizza Napoletana] (https://yasskin.github.io/pizza "Order Pizza")
 
 _Order Pizza: User Interface_
 * _A website for a pizza company where a user can choose one or more individual toppings (cheese, pepperoni, artichoke, anchovy, etc) and a size to order a pizza and see the final cost. Allows the user to choose toppings and size for the pizza they'd like to order._
