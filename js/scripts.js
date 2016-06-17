@@ -1,4 +1,10 @@
 // Business (or back-end) logic:
+
+//initialize new pizza
+var pizzaOne;
+var toppings;
+
+// constructor function for pizza object
 function Pizza (size, toppings, delivery) {
   this.pizzaSize = size;
   this.pizzaToppings = toppings;
@@ -6,6 +12,7 @@ function Pizza (size, toppings, delivery) {
   this.pizzaDelivery = delivery;
 }
 
+// calculates the cost by size
 Pizza.prototype.sizeCost = function() {
   if (this.pizzaSize === "small") {
     return this.pizzaCost = 10;
@@ -16,6 +23,7 @@ Pizza.prototype.sizeCost = function() {
   }
 }
 
+// increases the price per topping
 Pizza.prototype.toppingsCost = function () {
   if (this.pizzaSize === "small") {
     for (i=0; i<this.pizzaToppings.length; i++) {
@@ -34,39 +42,44 @@ Pizza.prototype.toppingsCost = function () {
   }
 }
 
-Pizza.prototype.toppingsNumber = function () {
-  var toppingsNumber = this.pizzaToppings.length;
-}
+// function resetFields() {
+//   $("#show-size").hide();
+//   $("#show-cost").hide();
+// }
 
 // user interface (or front-end) logic:
 $(document).ready(function() {
-  $("form#pizza-order").submit(function(event) {
+  //start a new order
+  $("form#start-button").click(function(event) {
+    event.preventDefault();
+    resetFields();
+  });
+
+  $("#pizza-order").submit(function(event) {
     event.preventDefault();
     //collect the user choices
     var size = $("input:radio[name=size]:checked").val();
-    var toppings = [];
+    toppings = [];
     $("input:checkbox[name=toppings]:checked").each(function() {
       (toppings).push(this.value);
     });
 
     //create new pizza
-    var pizzaOne = new Pizza (size, toppings);
-    var toppingsNumber;
+    pizzaOne = new Pizza (size, toppings);
+    console.log(pizzaOne);
     //calculate the cost
     pizzaOne.sizeCost();
     pizzaOne.toppingsCost();
-    pizzaOne.toppingsNumber();
     //display the order with cost
     $("#show-order").show();
     $("#show-size").text(pizzaOne.pizzaSize);
     $("#show-cost").text(pizzaOne.pizzaCost);
-    $("#show#delivery-details").show();
   });
-  //add a delivery option
-  $("form#request-delivery").submit(function(event) {
-    event.preventDefault();
-
-    $("#delivery-details").show();
-
-  });
+    //add a delivery option
+  // $("#delivery-button").click(function(event) {
+  //   event.preventDefault();
+  //
+  //   $("#conctact-delivery").show();
+  //
+  // });
 });
