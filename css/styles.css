@@ -2,6 +2,11 @@
   display: none;
 }
 
+body {
+  background-color: #ecf9ec;
+;
+}
+
 button {
   margin: 35px;
 }
@@ -13,4 +18,13 @@ button {
   background-size: cover;
   color: white;
   text-shadow: black 0.4em 0.4em 0.4em;
+}
+
+p {
+  font-size: 1.5em;
+}
+
+.form-group {
+  font-size: 1.3em;
+  font-weight: bold;
 }
