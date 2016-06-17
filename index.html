@@ -9,8 +9,45 @@
   </head>
   <body>
     <div class="container">
-      <h1>New Project</h1>
-
+      <h1>Pizza Order Website</h1>
+      <form>
+        <div class="form-group">
+          <label for="size">Select your pizza size</label>
+          <div class="radio">
+            <label>
+              <input type="radio" name="size" value="small">
+              Small
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="size" value="medium">
+              Medium
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="size" value="large">
+              Large
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="toppings" value"plain">
+              Plain cheese (no extra toppings)
+            </label>
+            <label>
+              <input type="checkbox" name="toppings" value"pepperoni">
+              Pepperoni
+            </label>
+          </div>
+        </div>
+        <button id="form-submit" class="btn" type="submit" name="button">Make my pizza</button>
+      </form>
+      <div id="show-order">
+        <p>You ordered: <span id="order-summary"></span></p>
+        <p>The total cost of your order is: <span class="total-price"></span></p>
+      </div>
     </div>
   </body>
 </html>
