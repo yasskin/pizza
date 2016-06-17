@@ -38,11 +38,20 @@ Pizza.prototype.toppingsCost() {
 // Everything below this line is user interface (or front-end) logic:
 
 $(document).ready(function() {
-  event.preventDefault();
 
-  var pizza1 = new Pizza();
+  $("size-form#pizza-size").submit(function(event) {
+    event.preventDefault();
+    var pizzaSize = $("input#pizza-size").val();
 
-  pizza1.sizeCost();
+    var pizzaOne = new Pizza(pizzaSize);
+    pizzaOne.sizeCost();
+
+  });
+
+  $("toppings-form#pizza-toppings").submit(function(event) {
+    event.preventDefault();
+    var pizzaToppings = $("input#pizza-toppings").val();
+  });
   pizza1.toppingsCost();
 
 });
