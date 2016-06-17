@@ -1,37 +1,33 @@
 // Business (or back-end) logic:
-var pizzaToppings = [];
-var pizzaSize;
-var pizzaCost;
-
-function Pizza(size, toppings, sizeCost, toppingsCost) {
+function Pizza (size, toppings) {
   this.pizzaSize = size;
   this.pizzaToppings = toppings;
-  this.pizzaCost = pizzaCost;
+  this.pizzaCost = 0;
 }
 
 Pizza.prototype.sizeCost = function() {
-  if (this.pizzaSize === "Small") {
-    return this.pizzaCost += 10;
-  } else if (this.pizzaSize === "Medium") {
-    return this.pizzaCost += 15;
+  if (this.pizzaSize === "small") {
+    return this.pizzaCost = 10;
+  } else if (this.pizzaSize === "medium") {
+    return this.pizzaCost = 15;
   } else { // for "Large" pizza
-    return this.pizzaCost += 20;
+    return this.pizzaCost = 20;
   }
 }
 
-Pizza.prototype.toppingsCost = function() {
-  if (this.pizzaSize === "Small") {
+Pizza.prototype.toppingsCost = function () {
+  if (this.pizzaSize === "small") {
     for (i=0; i<this.pizzaToppings.length; i++) {
       this.pizzaCost += 1;
     }
   }
-  if (this.pizzaSize === "Medium") {
-    for (i=0; i<thisPizzaToppings.length; i++) {
+  if (this.pizzaSize === "medium") {
+    for (i=0; i<this.pizzaToppings.length; i++) {
       this.pizzaCost += 2;
     }
   }
-  if (this.pizzaSize === "Large") {
-    for (i=0; i<pizzaToppings.length;) {
+  if (this.pizzaSize === "large") {
+    for (i=0; i<this.pizzaToppings.length; i++) {
       this.pizzaCost += 3;
     }
   }
@@ -43,26 +39,25 @@ $(document).ready(function() {
   $("form").submit(function(event) {
     event.preventDefault();
     //collect the user choices
-    var size = $("input:radio[name=size]:checked").val();
-    console.log(size);
+    var size = $("input:radio[name='size']:checked").val();
 
     var toppings = [];
-    $("input:checkbox[name=toppings]:checked").each(function() {
-      toppings.push(this.value);
-      console.log(toppings);
+    $("input:checkbox[name='toppings']:checked").each(function() {
+      (toppings).push(this.value);
     });
 
 
     //create new pizza
-    var pizzaOne = new Pizza(size, toppings);
-    console.log(pizzaOne);
+    var pizzaOne = new Pizza (size, toppings);
     //calculate the cost
     pizzaOne.sizeCost();
-      console.log(this.PizzaCOst);
     pizzaOne.toppingsCost();
-    console.log(this.pizzaCost);
-
-    //display the cost
+    console.log(pizzaOne);
+    //display the order with cost
+    $("#show-order").show();
+    $("#show-size").text(pizzaOne.pizzaSize);
+    $("#show-toppings").text(pizzaOne.pizzaToppings);
+    $("#show-cost").text(pizzaOne.pizzaCost);
 
   });
 });

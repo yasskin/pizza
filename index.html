@@ -9,7 +9,7 @@
   </head>
   <body>
     <div class="container">
-      <h1>Pizza Order Website</h1>
+      <h1>Vera Pizza Napoletana</h1>
       <form>
         <div class="form-group">
           <label for="size">Select your pizza size</label>
@@ -31,22 +31,36 @@
               Large
             </label>
           </div>
+          <label for"toppings">Select your toppings</label>
           <div class="checkbox">
             <label>
               <input type="checkbox" name="toppings" value"plain">
-              Plain cheese (no extra toppings)
+              Plain cheese
             </label>
             <label>
               <input type="checkbox" name="toppings" value"pepperoni">
               Pepperoni
+            </label>
+            <label>
+              <input type="checkbox" name="toppings" value"pepperoni">
+              Olives
+            </label>
+            <label>
+              <input type="checkbox" name="toppings" value"pepperoni">
+              Fresh Basil
+            </label>
+            <label>
+              <input type="checkbox" name="toppings" value"pepperoni">
+              Tomatoes
             </label>
           </div>
         </div>
         <button id="form-submit" class="btn" type="submit" name="button">Make my pizza</button>
       </form>
       <div id="show-order">
-        <p>You ordered: <span id="order-summary"></span></p>
-        <p>The total cost of your order is: <span class="total-price"></span></p>
+        <p>You ordered a <span id="show-size"></span>pizza.</p>
+        <p>With <span id="show-toppings"></span></p>;
+        <p>The total cost of your order is: <span id="show-cost"></span></p>
       </div>
     </div>
   </body>
